@@ -22,8 +22,8 @@ public class ParallelTest {
 	
 	
 	@BeforeClass
-	@Parameters({"browser"})
-	void setup(String br) throws InterruptedException {
+	@Parameters({"browser","url"})
+	void setup(String br,String url) throws InterruptedException {
 		
 	
 		switch(br.toLowerCase()) {
@@ -39,14 +39,9 @@ public class ParallelTest {
  		
 		}
 		
-		
-		
-		
-		
-		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		driver.get(url);
 		
 		Thread.sleep(2000);
 		
@@ -83,7 +78,7 @@ public class ParallelTest {
 	@AfterClass
 	void tearDown() {
 		
-		//driver.quit();
+		driver.quit();
 	}
 	
 	
