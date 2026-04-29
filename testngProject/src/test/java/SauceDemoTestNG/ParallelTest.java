@@ -52,7 +52,6 @@ public class ParallelTest {
 	void testLogo() {
 		
 		boolean status =driver.findElement(By.xpath("//img[@alt='company-branding']")).isDisplayed();
-		
 		Assert.assertEquals(status, true);
 		
 		
@@ -70,7 +69,7 @@ public class ParallelTest {
 	@Test(priority= 3)
 	void testURL() {
 		
-		Assert.assertEquals(driver.getCurrentUrl(), "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		Assert.assertEquals(driver.getCurrentUrl(), "https://opensource-demo.orangehrmlive.com/");
 		
 	}
 	
